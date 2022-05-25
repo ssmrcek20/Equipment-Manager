@@ -28,5 +28,11 @@ namespace Equipment_Manager
             List<Posudba> posudbe = PosudbaRepository.GetPosudbe();
             dgvPosudbe.DataSource = posudbe;
         }
+
+        private void btnNovaPosudba_Click(object sender, EventArgs e)
+        {
+            FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba();
+            frmNovaPosudba.ShowDialog();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Equipment_Manager.Repositories
         {
             Posudba posudba = null;
 
-            string sql = $"SELECT * FROM Posudba WHERE Id = {id}";
+            string sql = $"SELECT * FROM Posudba WHERE ID = {id}";
             DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
@@ -53,7 +53,7 @@ namespace Equipment_Manager.Repositories
 
         private static Posudba CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["IDPosudba"].ToString());
+            int id = int.Parse(reader["ID"].ToString());
             int idCipZaposlenika = int.Parse(reader["IDCip"].ToString());
             int idFoiZaposlenika = int.Parse(reader["IDFoi"].ToString());
             string datumPosudbe = reader["DatumPosudbe"].ToString();
@@ -67,6 +67,7 @@ namespace Equipment_Manager.Repositories
                 IDCipZaposlenika =idCipZaposlenika,
                 IDFoiZaposlenika=idFoiZaposlenika,
                 DatumPosudbe = datumPosudbe,
+                RazlogPosudbe=razlogPosudbe,
                 DatumVracanja = datumVracanja,
                 IDOpreme = idOpreme
             };

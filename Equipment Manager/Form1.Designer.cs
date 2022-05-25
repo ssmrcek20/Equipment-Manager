@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvPosudbe = new System.Windows.Forms.DataGridView();
+            this.btnNovaPosudba = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosudbe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,22 @@
             this.dgvPosudbe.Size = new System.Drawing.Size(776, 322);
             this.dgvPosudbe.TabIndex = 0;
             // 
+            // btnNovaPosudba
+            // 
+            this.btnNovaPosudba.Location = new System.Drawing.Point(624, 368);
+            this.btnNovaPosudba.Name = "btnNovaPosudba";
+            this.btnNovaPosudba.Size = new System.Drawing.Size(137, 52);
+            this.btnNovaPosudba.TabIndex = 1;
+            this.btnNovaPosudba.Text = "Nova posudba";
+            this.btnNovaPosudba.UseVisualStyleBackColor = true;
+            this.btnNovaPosudba.Click += new System.EventHandler(this.btnNovaPosudba_Click);
+            // 
             // FrmPosudbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNovaPosudba);
             this.Controls.Add(this.dgvPosudbe);
             this.Name = "FrmPosudbe";
             this.Text = "FrmPosudbe";
@@ -60,6 +72,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPosudbe;
+        private System.Windows.Forms.Button btnNovaPosudba;
     }
 }
 
