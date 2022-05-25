@@ -59,6 +59,7 @@
     <Compile Include="Models\CipZaposlenik.cs" />
     <Compile Include="Models\FoiZaposlenik.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Posudba.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PosudbaRepository.cs" />
