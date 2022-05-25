@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Equipment_Manager.Models;
+using Equipment_Manager.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +20,13 @@ namespace Equipment_Manager
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowPosudba();
+        }
 
+        private void ShowPosudba()
+        {
+            List<Posudba> posudbe = PosudbaRepository.GetPosudbe();
+            dgvPosudbe.DataSource = posudbe;
         }
     }
 }

@@ -11,11 +11,13 @@ namespace Equipment_Manager.Repositories
 {
     public class PosudbaRepository
     {
+        
         public static Posudba GetPosudba(int id)
         {
             Posudba posudba = null;
 
             string sql = $"SELECT * FROM Posudba WHERE Id = {id}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -34,6 +36,7 @@ namespace Equipment_Manager.Repositories
             var posudbe = new List<Posudba>();
 
             string sql = "SELECT * FROM Posudba";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
@@ -50,7 +53,7 @@ namespace Equipment_Manager.Repositories
 
         private static Posudba CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["ID"].ToString());
+            int id = int.Parse(reader["IDPosudba"].ToString());
             int idCipZaposlenika = int.Parse(reader["IDCip"].ToString());
             int idFoiZaposlenika = int.Parse(reader["IDFoi"].ToString());
             string datumPosudbe = reader["DatumPosudbe"].ToString();
