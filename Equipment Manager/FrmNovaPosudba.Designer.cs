@@ -108,6 +108,7 @@
             this.Controls.Add(this.cboCipZaposlenik);
             this.Name = "FrmNovaPosudba";
             this.Text = "FrmNovaPosudba";
+            this.Load += new System.EventHandler(this.FrmNovaPosudba_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
