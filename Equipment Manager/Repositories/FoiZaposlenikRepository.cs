@@ -11,6 +11,24 @@ namespace Equipment_Manager.Repositories
 {
     public class FoiZaposlenikRepository
     {
+        public static FoiZaposlenik GetFois(int id)
+        {
+            FoiZaposlenik foiZaposlenik = null;
+
+            string sql = $"SELECT * FROM FoiZaposlenik WHERE ID = {id}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                foiZaposlenik = CreateObject(reader);
+                reader.Close();
+            }
+
+            DB.CloseConnection();
+            return foiZaposlenik;
+        }
         public static List<FoiZaposlenik> GetFoi()
         {
             var foiZaposlenici = new List<FoiZaposlenik>();

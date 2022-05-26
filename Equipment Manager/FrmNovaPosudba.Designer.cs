@@ -33,8 +33,8 @@
             this.txtRazlogPosudbe = new System.Windows.Forms.TextBox();
             this.dtpDatumPosudbe = new System.Windows.Forms.DateTimePicker();
             this.dtpDatumVracanja = new System.Windows.Forms.DateTimePicker();
-            this.clbOprema = new System.Windows.Forms.CheckedListBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cboOprema = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cboCipZaposlenik
@@ -76,14 +76,6 @@
             this.dtpDatumVracanja.Size = new System.Drawing.Size(205, 20);
             this.dtpDatumVracanja.TabIndex = 6;
             // 
-            // clbOprema
-            // 
-            this.clbOprema.FormattingEnabled = true;
-            this.clbOprema.Location = new System.Drawing.Point(336, 207);
-            this.clbOprema.Name = "clbOprema";
-            this.clbOprema.Size = new System.Drawing.Size(205, 109);
-            this.clbOprema.TabIndex = 7;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(242, 372);
@@ -94,13 +86,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cboOprema
+            // 
+            this.cboOprema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOprema.FormattingEnabled = true;
+            this.cboOprema.Location = new System.Drawing.Point(336, 207);
+            this.cboOprema.Name = "cboOprema";
+            this.cboOprema.Size = new System.Drawing.Size(205, 21);
+            this.cboOprema.TabIndex = 9;
+            // 
             // FrmNovaPosudba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboOprema);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.clbOprema);
             this.Controls.Add(this.dtpDatumVracanja);
             this.Controls.Add(this.dtpDatumPosudbe);
             this.Controls.Add(this.txtRazlogPosudbe);
@@ -121,7 +122,7 @@
         private System.Windows.Forms.TextBox txtRazlogPosudbe;
         private System.Windows.Forms.DateTimePicker dtpDatumPosudbe;
         private System.Windows.Forms.DateTimePicker dtpDatumVracanja;
-        private System.Windows.Forms.CheckedListBox clbOprema;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cboOprema;
     }
 }

@@ -35,6 +35,7 @@
             // 
             // dgvPosudbe
             // 
+            this.dgvPosudbe.AllowUserToOrderColumns = true;
             this.dgvPosudbe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPosudbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

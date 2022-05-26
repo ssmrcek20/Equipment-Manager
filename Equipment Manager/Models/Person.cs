@@ -13,5 +13,9 @@ namespace Equipment_Manager.Models
         public string Lozinka { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+        public string GetUsername()
+        {
+            return KorisnickoIme;
+        }
     }
 }

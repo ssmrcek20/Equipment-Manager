@@ -11,6 +11,24 @@ namespace Equipment_Manager.Repositories
 {
     public class OpremaRepository
     {
+        public static Oprema GetOpreme(int id)
+        {
+            Oprema oprema = null;
+
+            string sql = $"SELECT * FROM Oprema WHERE ID = {id}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                oprema = CreateObject(reader);
+                reader.Close();
+            }
+
+            DB.CloseConnection();
+            return oprema;
+        }
         public static List<Oprema> GetOprema()
         {
             var opreme = new List<Oprema>();

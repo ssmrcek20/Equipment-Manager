@@ -11,6 +11,24 @@ namespace Equipment_Manager.Repositories
 {
     public class CipZaposlenikRepository
     {
+        public static CipZaposlenik GetCips(int id)
+        {
+            CipZaposlenik cipZaposlenik = null;
+
+            string sql = $"SELECT * FROM CipZaposlenik WHERE ID = {id}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                cipZaposlenik = CreateObject(reader);
+                reader.Close();
+            }
+
+            DB.CloseConnection();
+            return cipZaposlenik;
+        }
         public static List<CipZaposlenik> GetCip()
         {
             var cipZaposlenici = new List<CipZaposlenik>();

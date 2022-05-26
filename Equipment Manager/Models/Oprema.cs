@@ -17,5 +17,9 @@ namespace Equipment_Manager.Models
         public string NazivOpreme { get; set; }
         public string OpisOpreme { get; set; }
         public int IDCipZaposlenika { get; set; }
+        public string GetNazivOpreme()
+        {
+            return NazivOpreme;
+        }
     }
 }
