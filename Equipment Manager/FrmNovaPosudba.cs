@@ -25,6 +25,11 @@ namespace Equipment_Manager
 
         private void FrmNovaPosudba_Load(object sender, EventArgs e)
         {
+            dtpDatumPosudbe.Format = DateTimePickerFormat.Custom;
+            dtpDatumPosudbe.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            dtpDatumVracanja.Format = DateTimePickerFormat.Custom;
+            dtpDatumVracanja.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+
             var CipZaposlenik = CipZaposlenikRepository.GetCip();
             cboCipZaposlenik.DataSource = CipZaposlenik;
             cboCipZaposlenik.ValueMember = "ID";

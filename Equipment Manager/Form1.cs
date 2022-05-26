@@ -22,6 +22,8 @@ namespace Equipment_Manager
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowPosudba();
+            dgvPosudbe.Columns["RazlogPosudbe"].Width = 200;
+            dgvPosudbe.Columns["ID"].Width = 33;
         }
 
         private void ShowPosudba()

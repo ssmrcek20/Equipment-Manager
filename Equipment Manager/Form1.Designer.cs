@@ -38,18 +38,20 @@
             this.dgvPosudbe.AllowUserToOrderColumns = true;
             this.dgvPosudbe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPosudbe.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvPosudbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPosudbe.Location = new System.Drawing.Point(12, 12);
             this.dgvPosudbe.Name = "dgvPosudbe";
             this.dgvPosudbe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPosudbe.Size = new System.Drawing.Size(776, 322);
+            this.dgvPosudbe.Size = new System.Drawing.Size(776, 370);
             this.dgvPosudbe.TabIndex = 0;
             // 
             // btnNovaPosudba
             // 
-            this.btnNovaPosudba.Location = new System.Drawing.Point(624, 368);
+            this.btnNovaPosudba.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovaPosudba.Location = new System.Drawing.Point(588, 388);
             this.btnNovaPosudba.Name = "btnNovaPosudba";
-            this.btnNovaPosudba.Size = new System.Drawing.Size(137, 52);
+            this.btnNovaPosudba.Size = new System.Drawing.Size(200, 50);
             this.btnNovaPosudba.TabIndex = 1;
             this.btnNovaPosudba.Text = "Nova posudba";
             this.btnNovaPosudba.UseVisualStyleBackColor = true;
@@ -62,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNovaPosudba);
             this.Controls.Add(this.dgvPosudbe);
+            this.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmPosudbe";
             this.Text = "FrmPosudbe";
             this.Load += new System.EventHandler(this.Form1_Load);
