@@ -34,6 +34,11 @@ namespace Equipment_Manager
             cboFoiZaposlenik.DataSource = FoiZaposlenik;
             cboFoiZaposlenik.ValueMember = "ID";
             cboFoiZaposlenik.DisplayMember = "KorisnickoIme";
+
+            var Oprema = OpremaRepository.GetOprema();
+            clbOprema.DataSource = Oprema;
+            clbOprema.ValueMember = "ID";
+            clbOprema.DisplayMember = "NazivOpreme";
         }
     }
 }
