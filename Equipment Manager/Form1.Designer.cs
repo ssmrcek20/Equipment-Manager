@@ -30,6 +30,8 @@
         {
             this.dgvPosudbe = new System.Windows.Forms.DataGridView();
             this.btnNovaPosudba = new System.Windows.Forms.Button();
+            this.btnUrediPosudbu = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosudbe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +59,35 @@
             this.btnNovaPosudba.UseVisualStyleBackColor = true;
             this.btnNovaPosudba.Click += new System.EventHandler(this.btnNovaPosudba_Click);
             // 
+            // btnUrediPosudbu
+            // 
+            this.btnUrediPosudbu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrediPosudbu.Location = new System.Drawing.Point(12, 388);
+            this.btnUrediPosudbu.Name = "btnUrediPosudbu";
+            this.btnUrediPosudbu.Size = new System.Drawing.Size(200, 50);
+            this.btnUrediPosudbu.TabIndex = 2;
+            this.btnUrediPosudbu.Text = "Uredi posudbu";
+            this.btnUrediPosudbu.UseVisualStyleBackColor = true;
+            this.btnUrediPosudbu.Click += new System.EventHandler(this.btnUrediPosudbu_Click);
+            // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisi.Location = new System.Drawing.Point(218, 388);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(200, 50);
+            this.btnObrisi.TabIndex = 3;
+            this.btnObrisi.Text = "Obriši";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
+            // 
             // FrmPosudbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnObrisi);
+            this.Controls.Add(this.btnUrediPosudbu);
             this.Controls.Add(this.btnNovaPosudba);
             this.Controls.Add(this.dgvPosudbe);
             this.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -77,6 +103,8 @@
 
         private System.Windows.Forms.DataGridView dgvPosudbe;
         private System.Windows.Forms.Button btnNovaPosudba;
+        private System.Windows.Forms.Button btnUrediPosudbu;
+        private System.Windows.Forms.Button btnObrisi;
     }
 }
 

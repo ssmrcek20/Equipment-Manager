@@ -94,5 +94,15 @@ namespace Equipment_Manager
             dgvPosudbe.Columns["RazlogPosudbe"].Width = 200;
             dgvPosudbe.Columns["ID"].Width = 33;
         }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUrediPosudbu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
