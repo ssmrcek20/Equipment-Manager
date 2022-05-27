@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Equipment_Manager.Repositories
 {
@@ -73,6 +74,15 @@ namespace Equipment_Manager.Repositories
             };
 
             return posudba;
+        }
+        public static void InsertPosudba(FoiZaposlenik foiZaposlenik, CipZaposlenik cipZaposlenik, Oprema oprema, int idPosudba, string datumPosudbe, string razlogPosudbe, string datumVracanja)
+        {
+            string sql = $"INSERT INTO Posudba (ID, IDCip, IDFoi, DatumPosudbe, RazlogPosudbe, DatumVracanja, IDOpreme) VALUES ({idPosudba}, {cipZaposlenik.ID}, {foiZaposlenik.ID}, '{datumPosudbe}', '{razlogPosudbe}', '{datumVracanja}', {oprema.ID})";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
+            MessageBox.Show(sql);
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
         }
     }
 }
