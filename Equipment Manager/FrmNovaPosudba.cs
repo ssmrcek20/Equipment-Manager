@@ -56,19 +56,16 @@ namespace Equipment_Manager
             cboCipZaposlenik.DataSource = CipZaposlenik;
             cboCipZaposlenik.ValueMember = "ID";
             cboCipZaposlenik.DisplayMember = "KorisnickoIme";
-            cboCipZaposlenik.SelectedItem = null;
 
             var FoiZaposlenik = FoiZaposlenikRepository.GetFoi();
             cboFoiZaposlenik.DataSource = FoiZaposlenik;
             cboFoiZaposlenik.ValueMember = "ID";
             cboFoiZaposlenik.DisplayMember = "KorisnickoIme";
-            cboFoiZaposlenik.SelectedItem = null;
 
             var Oprema = OpremaRepository.GetOprema();
             cboOprema.DataSource = Oprema;
             cboOprema.ValueMember = "ID";
             cboOprema.DisplayMember = "NazivOpreme";
-            cboOprema.SelectedItem = null;
 
             if (FrmPosudbe.IDPosudbe != -1)
             {

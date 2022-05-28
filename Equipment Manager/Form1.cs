@@ -25,6 +25,7 @@ namespace Equipment_Manager
             ShowPosudba();
             dgvPosudbe.Columns["RazlogPosudbe"].Width = 200;
             dgvPosudbe.Columns["ID"].Width = 33;
+            cboPretraga.SelectedItem = "Oprema";
         }
 
         private void ShowPosudba()
@@ -98,15 +99,29 @@ namespace Equipment_Manager
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            PosudbaRepository.DeletePosudba(int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString()));
-            Osvjezi();
+            if (dgvPosudbe.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste odabrali posudbu!!!");
+            }
+            else
+            {
+                PosudbaRepository.DeletePosudba(int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString()));
+                Osvjezi();
+            }
         }
 
         private void btnUrediPosudbu_Click(object sender, EventArgs e)
         {
-            IDPosudbe=int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString());
-            FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
-            frmNovaPosudba.ShowDialog();
+            if(dgvPosudbe.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste odabrali posudbu!!!");
+            }
+            else
+            {
+                IDPosudbe=int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString());
+                FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
+                frmNovaPosudba.ShowDialog();
+            }
         }
 
         private void txtPretraziEnterPress(object sender, KeyEventArgs e)
@@ -121,7 +136,7 @@ namespace Equipment_Manager
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                     }
-                    else if(dgvPosudbe.Rows[i].Cells["Oprema"].Value.ToString() == txtPretrazi.Text)
+                    else if(dgvPosudbe.Rows[i].Cells[cboPretraga.Text].Value.ToString() == txtPretrazi.Text)
                     {
                         dgvPosudbe.Rows[i].Visible = true;
                         e.Handled = true;

@@ -34,6 +34,7 @@
             this.btnObrisi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPretrazi = new System.Windows.Forms.TextBox();
+            this.cboPretraga = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosudbe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,24 +90,43 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Pretraži opremu:";
+            this.label1.Text = "Pretraži po:";
             // 
             // txtPretrazi
             // 
             this.txtPretrazi.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPretrazi.Location = new System.Drawing.Point(143, 12);
+            this.txtPretrazi.Location = new System.Drawing.Point(267, 12);
             this.txtPretrazi.Name = "txtPretrazi";
             this.txtPretrazi.Size = new System.Drawing.Size(205, 27);
             this.txtPretrazi.TabIndex = 12;
             this.txtPretrazi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPretraziEnterPress);
+            // 
+            // cboPretraga
+            // 
+            this.cboPretraga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPretraga.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPretraga.FormattingEnabled = true;
+            this.cboPretraga.Items.AddRange(new object[] {
+            "ID",
+            "CipZaposlenik",
+            "FoiZaposlenik",
+            "DatumPosudbe",
+            "RazlogPosudbe",
+            "DatumVracanja",
+            "Oprema"});
+            this.cboPretraga.Location = new System.Drawing.Point(107, 12);
+            this.cboPretraga.Name = "cboPretraga";
+            this.cboPretraga.Size = new System.Drawing.Size(154, 27);
+            this.cboPretraga.TabIndex = 13;
             // 
             // FrmPosudbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboPretraga);
             this.Controls.Add(this.txtPretrazi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnObrisi);
@@ -131,6 +151,7 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPretrazi;
+        private System.Windows.Forms.ComboBox cboPretraga;
     }
 }
 
