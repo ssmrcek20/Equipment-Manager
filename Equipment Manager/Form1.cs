@@ -98,15 +98,15 @@ namespace Equipment_Manager
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-
+            PosudbaRepository.DeletePosudba(int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString()));
+            Osvjezi();
         }
 
         private void btnUrediPosudbu_Click(object sender, EventArgs e)
         {
-            IDPosudbe=dgvPosudbe.CurrentCell.RowIndex;
+            IDPosudbe=int.Parse(dgvPosudbe.SelectedRows[0].Cells["ID"].Value.ToString());
             FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
             frmNovaPosudba.ShowDialog();
-            //aa
         }
     }
 }

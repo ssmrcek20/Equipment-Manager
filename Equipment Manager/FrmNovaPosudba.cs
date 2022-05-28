@@ -27,7 +27,7 @@ namespace Equipment_Manager
             var foiZaposlenik = cboFoiZaposlenik.SelectedItem as FoiZaposlenik;
             var oprema = cboOprema.SelectedItem as Oprema;
             List<Posudba> posudbe = PosudbaRepository.GetPosudbe();
-            int idPosudba = posudbe.Count;
+            int idPosudba = posudbe[posudbe.Count-1].ID+1;
             string datumPosudbe = dtpDatumPosudbe.Value.ToString();
             string razlogPosudbe = txtRazlogPosudbe.Text.ToString();
             string datumVracanja = dtpDatumVracanja.Value.ToString();
@@ -47,9 +47,9 @@ namespace Equipment_Manager
         private void FrmNovaPosudba_Load(object sender, EventArgs e)
         {
             dtpDatumPosudbe.Format = DateTimePickerFormat.Custom;
-            dtpDatumPosudbe.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            dtpDatumPosudbe.CustomFormat = "yyyy-MM-dd HH:mm:ss tt";
             dtpDatumVracanja.Format = DateTimePickerFormat.Custom;
-            dtpDatumVracanja.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            dtpDatumVracanja.CustomFormat = "yyyy-MM-dd HH:mm:ss tt";
             dtpDatumPosudbe.Value = DateTime.Now;
 
             var CipZaposlenik = CipZaposlenikRepository.GetCip();

@@ -91,5 +91,13 @@ namespace Equipment_Manager.Repositories
             DB.ExecuteCommand(sql);
             DB.CloseConnection(); 
         }
+        public static void DeletePosudba(int ID)
+        {
+            string sql = $"DELETE FROM Posudba WHERE ID = {ID}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
