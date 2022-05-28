@@ -15,6 +15,7 @@ namespace Equipment_Manager
 {
     public partial class FrmPosudbe : Form
     {
+        public static int IDPosudbe = -1;
         public FrmPosudbe()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace Equipment_Manager
         private void ShowCipZaposlenikKorisnickoIme()
         {
             CipZaposlenik cipZaposlenik = new CipZaposlenik();
-            if(dgvPosudbe.Columns.Contains("CipZaposlenik") == false)
+            if (dgvPosudbe.Columns.Contains("CipZaposlenik") == false)
             {
                 dgvPosudbe.Columns.Add("CipZaposlenik", "CipZaposlenik");
             }
@@ -102,7 +103,9 @@ namespace Equipment_Manager
 
         private void btnUrediPosudbu_Click(object sender, EventArgs e)
         {
-
+            IDPosudbe=dgvPosudbe.CurrentCell.RowIndex;
+            FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
+            frmNovaPosudba.ShowDialog();
         }
     }
 }

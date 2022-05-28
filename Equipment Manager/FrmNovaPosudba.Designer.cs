@@ -82,7 +82,7 @@
             this.dtpDatumPosudbe.ShowUpDown = true;
             this.dtpDatumPosudbe.Size = new System.Drawing.Size(205, 27);
             this.dtpDatumPosudbe.TabIndex = 5;
-            this.dtpDatumPosudbe.Value = new System.DateTime(2022, 5, 26, 22, 38, 14, 0);
+            this.dtpDatumPosudbe.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
             // 
             // dtpDatumVracanja
             // 

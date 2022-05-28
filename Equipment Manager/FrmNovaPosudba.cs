@@ -31,7 +31,15 @@ namespace Equipment_Manager
             string datumPosudbe = dtpDatumPosudbe.Value.ToString();
             string razlogPosudbe = txtRazlogPosudbe.Text.ToString();
             string datumVracanja = dtpDatumVracanja.Value.ToString();
-            PosudbaRepository.InsertPosudba(foiZaposlenik,cipZaposlenik,oprema,idPosudba,datumPosudbe,razlogPosudbe,datumVracanja);
+            if (FrmPosudbe.IDPosudbe == -1)
+            {
+                PosudbaRepository.InsertPosudba(foiZaposlenik, cipZaposlenik, oprema, idPosudba, datumPosudbe, razlogPosudbe, datumVracanja);
+            }
+            else
+            {
+                PosudbaRepository.UpdatePosudba(foiZaposlenik, cipZaposlenik, oprema, FrmPosudbe.IDPosudbe, datumPosudbe, razlogPosudbe, datumVracanja);
+                FrmPosudbe.IDPosudbe = -1;
+            }
             this.Close();
             frmPosudbe.Osvjezi();
         }
@@ -42,21 +50,44 @@ namespace Equipment_Manager
             dtpDatumPosudbe.CustomFormat = "yyyy-MM-dd hh:mm:ss";
             dtpDatumVracanja.Format = DateTimePickerFormat.Custom;
             dtpDatumVracanja.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            dtpDatumPosudbe.Value = DateTime.Now;
 
             var CipZaposlenik = CipZaposlenikRepository.GetCip();
             cboCipZaposlenik.DataSource = CipZaposlenik;
             cboCipZaposlenik.ValueMember = "ID";
             cboCipZaposlenik.DisplayMember = "KorisnickoIme";
+            cboCipZaposlenik.SelectedItem = null;
 
             var FoiZaposlenik = FoiZaposlenikRepository.GetFoi();
             cboFoiZaposlenik.DataSource = FoiZaposlenik;
             cboFoiZaposlenik.ValueMember = "ID";
             cboFoiZaposlenik.DisplayMember = "KorisnickoIme";
+            cboFoiZaposlenik.SelectedItem = null;
 
             var Oprema = OpremaRepository.GetOprema();
             cboOprema.DataSource = Oprema;
             cboOprema.ValueMember = "ID";
             cboOprema.DisplayMember = "NazivOpreme";
+            cboOprema.SelectedItem = null;
+
+            if (FrmPosudbe.IDPosudbe != -1)
+            {
+                GetPodaci(FrmPosudbe.IDPosudbe);
+            }
+        }
+        public void GetPodaci(int id)
+        {
+            Posudba posudba = PosudbaRepository.GetPosudba(id);
+            CipZaposlenik cipZaposlenik = CipZaposlenikRepository.GetCips(posudba.IDCipZaposlenika);
+            cboCipZaposlenik.SelectedIndex = cboCipZaposlenik.FindStringExact(cipZaposlenik.KorisnickoIme);
+            FoiZaposlenik foiZaposlenik = FoiZaposlenikRepository.GetFois(posudba.IDFoiZaposlenika);
+            cboFoiZaposlenik.SelectedIndex = cboFoiZaposlenik.FindStringExact(foiZaposlenik.KorisnickoIme);
+            Oprema oprema = OpremaRepository.GetOpreme(posudba.IDOpreme);
+            cboOprema.SelectedIndex = cboOprema.FindStringExact(oprema.NazivOpreme);
+            dtpDatumPosudbe.Value= DateTime.Parse(posudba.DatumPosudbe);
+            dtpDatumVracanja.Value= DateTime.Parse(posudba.DatumVracanja);
+            txtRazlogPosudbe.Text =posudba.RazlogPosudbe;
+
         }
     }
 }

@@ -79,7 +79,14 @@ namespace Equipment_Manager.Repositories
         {
             string sql = $"INSERT INTO Posudba (ID, IDCip, IDFoi, DatumPosudbe, RazlogPosudbe, DatumVracanja, IDOpreme) VALUES ({idPosudba}, {cipZaposlenik.ID}, {foiZaposlenik.ID}, '{datumPosudbe}', '{razlogPosudbe}', '{datumVracanja}', {oprema.ID})";
             DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
-            MessageBox.Show(sql);
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+        public static void UpdatePosudba(FoiZaposlenik foiZaposlenik, CipZaposlenik cipZaposlenik, Oprema oprema, int idPosudba, string datumPosudbe, string razlogPosudbe, string datumVracanja)
+        {
+            string sql = $"UPDATE Posudba SET IDCip = {cipZaposlenik.ID}, IDFoi = {foiZaposlenik.ID}, DatumPosudbe = '{datumPosudbe}', RazlogPosudbe = '{razlogPosudbe}', DatumVracanja = '{datumVracanja}', IDOpreme = {oprema.ID} WHERE ID = {idPosudba}";
+            DB.SetConfiguration("ssmrcek20_DB", "ssmrcek20", "V0AIvsw=");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
