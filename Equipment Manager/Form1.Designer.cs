@@ -32,6 +32,8 @@
             this.btnNovaPosudba = new System.Windows.Forms.Button();
             this.btnUrediPosudbu = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPretrazi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosudbe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +44,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPosudbe.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvPosudbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPosudbe.Location = new System.Drawing.Point(12, 12);
+            this.dgvPosudbe.Location = new System.Drawing.Point(12, 45);
             this.dgvPosudbe.Name = "dgvPosudbe";
             this.dgvPosudbe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPosudbe.Size = new System.Drawing.Size(776, 370);
+            this.dgvPosudbe.Size = new System.Drawing.Size(776, 337);
             this.dgvPosudbe.TabIndex = 0;
             // 
             // btnNovaPosudba
@@ -81,11 +83,32 @@
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Pretraži opremu:";
+            // 
+            // txtPretrazi
+            // 
+            this.txtPretrazi.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPretrazi.Location = new System.Drawing.Point(143, 12);
+            this.txtPretrazi.Name = "txtPretrazi";
+            this.txtPretrazi.Size = new System.Drawing.Size(205, 27);
+            this.txtPretrazi.TabIndex = 12;
+            this.txtPretrazi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPretraziEnterPress);
+            // 
             // FrmPosudbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPretrazi);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnUrediPosudbu);
             this.Controls.Add(this.btnNovaPosudba);
@@ -96,6 +119,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosudbe)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,6 +129,8 @@
         private System.Windows.Forms.Button btnNovaPosudba;
         private System.Windows.Forms.Button btnUrediPosudbu;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPretrazi;
     }
 }
 

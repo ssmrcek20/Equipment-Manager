@@ -108,5 +108,32 @@ namespace Equipment_Manager
             FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
             frmNovaPosudba.ShowDialog();
         }
+
+        private void txtPretraziEnterPress(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                for (int i = 0; i < dgvPosudbe.Rows.Count; i++)
+                {
+                    if(txtPretrazi.Text == "")
+                    {
+                        dgvPosudbe.Rows[i].Visible = true;
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                    }
+                    else if(dgvPosudbe.Rows[i].Cells["Oprema"].Value.ToString() == txtPretrazi.Text)
+                    {
+                        dgvPosudbe.Rows[i].Visible = true;
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                    }
+                    else
+                    {
+                        dgvPosudbe.CurrentCell = null;
+                        dgvPosudbe.Rows[i].Visible = false;
+                    }
+                }
+            }
+        }
     }
 }
