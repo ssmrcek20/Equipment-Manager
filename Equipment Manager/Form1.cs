@@ -106,6 +106,7 @@ namespace Equipment_Manager
             IDPosudbe=dgvPosudbe.CurrentCell.RowIndex;
             FrmNovaPosudba frmNovaPosudba = new FrmNovaPosudba(this);
             frmNovaPosudba.ShowDialog();
+            //aa
         }
     }
 }
